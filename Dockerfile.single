@@ -1,0 +1,19 @@
+FROM ruby:3.2.2 as base
+
+ENV TERM ansi
+#ENV term linux
+
+#RUN apt update && apt upgrade
+
+# profanityfe
+RUN gem install curses
+# lich-5 gemfile
+RUN gem install bundler -v 2.4.6
+
+RUN mkdir /app
+WORKDIR /app
+COPY profanityfe profanityfe
+COPY lich-5 lich-5
+COPY profanityfe/entrypoint.sh entrypoint.sh
+
+RUN bash -c 'cd lich-5; bundle install'
