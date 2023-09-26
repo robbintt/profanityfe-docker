@@ -10,9 +10,9 @@ rvm use 3.2.2 --default
 cp /app/profanityfe/mahtra.xml /root/.profanity.xml
 cp /app/profanityfe/mahtra.xml /root/.profanity/artiglas.xml
 
-cd /app && ./lichlauncher.sh &
+cd /app && source ./lichlauncher.sh &
 
 sleep 5
 cd /app/profanityfe/ && ./profanity.rb #--port=8000 --char=$CHAR
 
-while true; do sleep 1; done
+#while true; do sleep 1; done

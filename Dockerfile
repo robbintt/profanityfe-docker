@@ -40,4 +40,5 @@ COPY profanityfe/mahtra.xml /root/.profanity.xml
 #ENV TERM ansi
 #ENV TERM linux
 ENV TERM xterm-256color
-ENV BUNDLE_PATH=/usr/local/bundle
+#ENV BUNDLE_PATH=/usr/local/bundle
+ENV PATH /usr/local/rvm/gems/ruby-3.2.2/bin:$PATH
