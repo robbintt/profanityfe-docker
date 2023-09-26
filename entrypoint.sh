@@ -4,12 +4,15 @@ set +e
 
 CHAR="Artiglas"
 
+source /usr/local/rvm/scripts/rvm
+rvm use 3.2.2 --default
+
 cp /app/profanityfe/mahtra.xml /root/.profanity.xml
 cp /app/profanityfe/mahtra.xml /root/.profanity/artiglas.xml
 
-/app/lichlauncher.sh &
+cd /app && ./lichlauncher.sh &
 
-sleep 3
-/app/profanityfe/profanity.rb --port=8000 --char=$CHAR
+sleep 5
+cd /app/profanityfe/ && ./profanity.rb #--port=8000 --char=$CHAR
 
 while true; do sleep 1; done

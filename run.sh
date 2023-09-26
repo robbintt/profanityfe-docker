@@ -21,5 +21,6 @@ docker run \
   -v $PROFANITY_DATA_HOST_PATH:/root/.profanity \
   profanityfe \
   "./entrypoint.sh"
+#   "./debug.sh"
 #  "./lichlauncher.sh"
 #  "./login.sh"
