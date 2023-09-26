@@ -1,6 +1,5 @@
 # Base Stage
 FROM ruby:3.2.2 as base
-ENV TERM ansi
 # we will forward gtk to host system, some deps:
 RUN apt-get update && apt-get install -y libgtk-3-0 libgtk-3-dev
 RUN gem install gtk3
@@ -21,5 +20,10 @@ WORKDIR /app
 COPY --from=builder /usr/local/bundle/ /usr/local/bundle/
 COPY profanityfe profanityfe
 COPY lich-5 lich-5
+RUN mkdir -p /app/lich-5/data
 COPY profanityfe-docker/entrypoint.sh entrypoint.sh
 COPY profanityfe-docker/login.sh login.sh
+RUN mkdir -p /root/.profanity
+COPY profanityfe/mahtra.xml /root/.profanity.xml
+
+ENV TERM linux #ansi
