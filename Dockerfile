@@ -22,8 +22,10 @@ COPY profanityfe profanityfe
 COPY lich-5 lich-5
 RUN mkdir -p /app/lich-5/data
 COPY profanityfe-docker/entrypoint.sh entrypoint.sh
+COPY profanityfe-docker/lichlauncher.sh lichlauncher.sh
 COPY profanityfe-docker/login.sh login.sh
 RUN mkdir -p /root/.profanity
 COPY profanityfe/mahtra.xml /root/.profanity.xml
 
-ENV TERM linux #ansi
+#ENV TERM ansi
+ENV TERM linux

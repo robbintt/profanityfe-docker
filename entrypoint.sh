@@ -4,10 +4,12 @@ set +e
 
 CHAR="Artiglas"
 
-ruby /app/lich-5/lich.rbw --login $CHAR --without-frontend --dragonrealms --detachable-client=8000 &
+cp /app/profanityfe/mahtra.xml /root/.profanity.xml
+cp /app/profanityfe/mahtra.xml /root/.profanity/artiglas.xml
 
-$(exit 1)
-until /app/profanityfe/profanity.rb --port=8000 --char=$CHAR 2> /dev/null ;do
-  printf "."
-  sleep 1
-done
+/app/lichlauncher.sh &
+
+sleep 3
+/app/profanityfe/profanity.rb --port=8000 --char=$CHAR
+
+while true; do sleep 1; done
