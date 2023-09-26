@@ -13,7 +13,7 @@ mkdir -p $PROFANITY_DATA_HOST_PATH
 docker run \
   --name profanityfe \
   --rm \
-  --tty \
+  -it \
   -p 127.0.0.1:11024:11024/tcp \
   -e "NO_AT_BRIDGE=1" \
   -e DISPLAY=$DISPLAY \
@@ -21,8 +21,8 @@ docker run \
   -v $LICH_DATA_HOST_PATH:/app/lich-5/data \
   -v $PROFANITY_DATA_HOST_PATH:/root/.profanity \
   profanityfe \
-   "./debug.sh"
-#  "./entrypoint.sh"
+  "./entrypoint.sh"
+#   "./debug.sh"
 #  bash -lc "cd /app && ./lichlauncher.sh"
 #    bash -c 'env'
 #  "./login.sh"
