@@ -21,8 +21,8 @@ docker run \
   -v $LICH_DATA_HOST_PATH:/app/lich-5/data \
   -v $PROFANITY_DATA_HOST_PATH:/root/.profanity \
   profanityfe \
-  "./entrypoint.sh"
+   "./debug.sh"
+#  "./entrypoint.sh"
 #  bash -lc "cd /app && ./lichlauncher.sh"
 #    bash -c 'env'
-#   "./debug.sh"
 #  "./login.sh"
